@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane fx:id="button" onMouseClicked="#clickEvent" prefHeight="50.0" prefWidth="130.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SideButtonController">
+   <children>
+      <Label fx:id="label" layoutX="32.0" layoutY="5.0" prefHeight="40.0" prefWidth="84.0" text="label" wrapText="true" />
+   </children>
+</Pane>

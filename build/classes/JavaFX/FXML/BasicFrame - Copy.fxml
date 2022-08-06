@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane fx:id="mainGrid" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="574.0" prefWidth="841.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+  <columnConstraints>
+    <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="304.0" />
+      <ColumnConstraints hgrow="NEVER" maxWidth="296.0" minWidth="10.0" prefWidth="296.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="183.0" minHeight="10.0" prefHeight="172.0" vgrow="ALWAYS" />
+    <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="402.0" vgrow="ALWAYS" />
+      <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+  </rowConstraints>
+   <children>
+      <VBox fx:id="searchP" prefHeight="163.0" prefWidth="304.0" GridPane.hgrow="ALWAYS" GridPane.vgrow="NEVER">
+         <children>
+            <TextField fx:id="searchField" alignment="TOP_LEFT" prefHeight="25.0" prefWidth="341.0" VBox.vgrow="ALWAYS" />
+            <Accordion fx:id="accordion" maxWidth="545.0">
+              <panes>
+                <TitledPane animated="false" prefHeight="173.0" prefWidth="545.0" text="Tìm kiếm nâng cao">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="95.0" prefWidth="409.0">
+                           <children>
+                              <ScrollPane fx:id="sPane" layoutX="-2.0" layoutY="2.0" prefHeight="127.0" prefWidth="545.0">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+                                </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </TitledPane>
+              </panes>
+            </Accordion>
+         </children>
+      </VBox>
+      <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="159.0" tabClosingPolicy="UNAVAILABLE" GridPane.columnIndex="1" GridPane.rowSpan="3">
+        <tabs>
+          <Tab>
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="280.0">
+                     <children>
+                        <Label fx:id="thongBaoLabel" layoutX="14.0" layoutY="309.0" text="Label" visible="false" />
+                        <VBox fx:id="info" layoutX="13.0" layoutY="14.0" prefHeight="32.0" prefWidth="270.0">
+                           <children>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <HBox fx:id="firstBox" prefHeight="25.0" prefWidth="140.0" spacing="5.0">
+                                             <children>
+                                                <Button fx:id="themButton" mnemonicParsing="false" onAction="#them" text="Thêm" />
+                                                <Button mnemonicParsing="false" onAction="#xoa" text="Xóa" fx:id="xoaButton" />
+                                                <Button fx:id="suaButton" mnemonicParsing="false" onAction="#sua" text="Sửa" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <HBox fx:id="secondBox" alignment="TOP_RIGHT" prefHeight="25.0" prefWidth="95.0" spacing="5.0" visible="false">
+                                             <children>
+                                                <Button fx:id="okButton" mnemonicParsing="false" onAction="#thucHienHanhDong" text="Ok" />
+                                                <Button fx:id="huyButton" mnemonicParsing="false" onAction="#huyHanhDong" text="Hủy" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <VBox fx:id="tablePane" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+         <children>
+            <HBox alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="545.0">
+               <children>
+                  <Button fx:id="previousPage" mnemonicParsing="false" text="Trang trước" />
+                  <ComboBox fx:id="pageBox" prefWidth="150.0" />
+                  <Button fx:id="nextPage" mnemonicParsing="false" text="Trang sau" />
+               </children>
+            </HBox>
+         </children></VBox>
+   </children>
+</GridPane>

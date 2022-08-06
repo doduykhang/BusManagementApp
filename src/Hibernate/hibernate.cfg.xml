@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.connection.driver_class">
+            com.microsoft.sqlserver.jdbc.SQLServerDriver
+        </property>
+    <property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;databaseName=QuanLyXeBus;sendTimeAsDateTime=false</property>
+    <property name="hibernate.connection.username">
+            khang	
+        </property>
+    <property name="hibernate.connection.password">
+            bao123
+        </property>
+	<property name="hibernate.enable_lazy_load_no_trans"> true</property>
+
+    <!-- JDBC connection pool (use the built-in) -->
+    <property name="connection.pool_size">1</property>
+    <property name="hibernate.dialect">
+            org.hibernate.dialect.SQLServer2008Dialect
+        </property>
+    <!-- Show all executed SQL to stdout -->
+    <property name="show_sql">true</property>
+    <!-- List mapping annotation classes -->
+    <mapping class="Entity.LoaiXe"/>
+    <mapping class="Entity.NhaSanXuat"/>
+    <mapping class="Entity.Xe"/>
+    <mapping class="Entity.TinhTrang"/>
+  </session-factory>
+</hibernate-configuration>
